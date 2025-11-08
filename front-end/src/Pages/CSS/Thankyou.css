@@ -1,0 +1,41 @@
+.thank-you-container {
+  text-align: center;
+  padding: 80px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.checkmark {
+  font-size: 60px;
+  color: #28a745;
+  margin-bottom: 20px;
+  border-radius: 50%;
+}
+
+ .thank-you-container h1 {
+  font-size: 100px;
+  margin: 0;
+    margin-bottom: 30px;
+
+}
+
+ .thank-you-container p {
+  color: #6c757d;
+  font-size: 27px;
+  margin-top: 10px;
+  margin-bottom: 60px;
+}
+
+.back-button {
+  background-color: #5ce6eb;
+  color: black;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #45cfd5;
+}

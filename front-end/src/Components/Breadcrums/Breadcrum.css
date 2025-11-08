@@ -1,0 +1,36 @@
+/* .breadcrum{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #5e5e5e;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 60px 170px;
+    text-transform: capitalize;
+} */
+
+.breadcrumb{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #5e5e5e;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 60px 170px;
+    text-transform: capitalize;
+}
+
+
+
+  .breadcrumb a {
+    text-decoration: none;
+    color:red;
+  }
+  
+
+  
+  .breadcrumb .current {
+    color: #333;
+    font-weight: bold;
+  }
+  
