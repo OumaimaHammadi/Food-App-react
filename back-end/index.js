@@ -31,7 +31,7 @@ app.get("/",(req,res)=>{
     res.send("Express App is Running")
 })
 
-
+const isDev = process.env.NODE_ENV !== 'production';
 //Image Storage Engine 
 const storage = multer.diskStorage({
     // destination: './upload/images',
