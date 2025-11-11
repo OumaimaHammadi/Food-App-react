@@ -19,12 +19,12 @@ const ShopContextProvider=(props) => {
   const [cartItems,setCartItems]=useState(getDefaultCart())
   
       useEffect(()=>{
-     fetch('http://localhost:9000/api/v1/dishe/alldishes')
+     fetch('  https://food-app-react-lf5q.vercel.app/api/v1/dishe/alldishes')
      .then((response)=> response.json())
      .then((data)=>setAll_Dishe(data))
      
      if(localStorage.getItem('auth-token')){
-        fetch('http://localhost:9000/api/v1/cartData/getcart',{
+        fetch('  https://food-app-react-lf5q.vercel.app/cartData/getcart',{
           method:'POST',
           headers:{
             Accept:'application/form-data',

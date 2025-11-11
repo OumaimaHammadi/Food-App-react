@@ -10,7 +10,10 @@ const Dishes = () => {
      const [all_dishe,setAll_dishe]= useState([])
     
       useEffect(()=>{
-        fetch('http://localhost:9000/api/v1/dishes')
+      
+                fetch('https://food-app-react-lf5q.vercel.app/api/v1/dishes')
+
+        //fetch('http://localhost:9000/api/v1/dishes')
         .then((response)=> response.json())
         .then((data)=>setAll_dishe(data))
     
