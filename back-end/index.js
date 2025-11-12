@@ -18,7 +18,19 @@ import dishesRoute from './routes/dishes.js'
 ///////midleware
 const app = express()
 app.use(express.json())
-app.use(cors())
+//app.use(cors())
+
+
+app.use(
+  cors({
+    origin: [
+      "https://food-app-react-front-end.vercel.app", // your React frontend
+      "http://localhost:3000" // for local dev
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
 //Database Connection with MongoDB
 
