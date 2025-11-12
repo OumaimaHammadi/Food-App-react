@@ -19,12 +19,12 @@ const ShopContextProvider=(props) => {
   const [cartItems,setCartItems]=useState(getDefaultCart())
   
       useEffect(()=>{
-     fetch('https://localhost:9000/api/v1/dishe/alldishes')
+     fetch('http://localhost:9000/api/v1/dishe/alldishes')
      .then((response)=> response.json())
      .then((data)=>setAll_Dishe(data))
      
      if(localStorage.getItem('auth-token')){
-        fetch('https://localhost:9000/cartData/getcart',{
+        fetch('http://localhost:9000/cartData/getcart',{
           method:'POST',
           headers:{
             Accept:'application/form-data',
@@ -43,7 +43,7 @@ const ShopContextProvider=(props) => {
     setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
     // console.log(cartItems)
      if(localStorage.getItem('auth-token')){
-       fetch('https://localhost:9000/api/v1/cartData/addtocart',{
+       fetch('http://localhost:9000/api/v1/cartData/addtocart',{
         method:'POST',
         headers:{
           Accept:'application/form-data',

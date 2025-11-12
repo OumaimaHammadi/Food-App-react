@@ -7,7 +7,7 @@ const NewDishes = () => {
   const [new_dishes,setNew_dishes]= useState([])
 
   useEffect(()=>{
-    fetch('https://localhost:9000/api/v1/newdishes')
+    fetch('http://localhost:9000/api/v1/newdishes')
     .then((response)=> response.json())
     .then((data)=>setNew_dishes(data))
 
