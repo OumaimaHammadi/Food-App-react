@@ -17,7 +17,6 @@ import dishesRoute from './routes/dishes.js'
 
 ///////midleware
 
-app.use(express.static(path.join(__dirname, 'public')));
 
 
 
