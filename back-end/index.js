@@ -24,7 +24,8 @@ app.use(express.json())
  app.use(
   cors({
     origin: [
-      "https://food-app-react-front-end-pied.vercel.app", // your React frontend
+      "https://food-app-react-front-end-pied.vercel.app",
+       "https://food-app-react-front-qxc9jbwnj-oumaimas-projects-b33d0af6.vercel.app", // your React frontend
       "http://localhost:3000" // for local dev
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
