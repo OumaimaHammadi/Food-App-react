@@ -40,7 +40,18 @@ app.use(express.json())
 
 const isDev = process.env.NODE_ENV !== "production";
 
-const mongoURI = isDev
+
+const mongoURI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/Food-App-react';
+
+mongoose.connect(mongoURI, { 
+  useNewUrlParser: true,
+  useUnifiedTopology: true 
+})
+.then(() => console.log('MongoDB connected'))
+.catch(err => console.log('MongoDB connection error:', err));
+
+
+/* const mongoURI = isDev
   ? "mongodb://127.0.0.1:27017/Food-App-react" // Local (MongoDB Compass)
   : process.env.MONGO_URI; // Cloud / Production URI
 
@@ -51,7 +62,7 @@ if (!mongoURI) {
 mongoose
   .connect(mongoURI)
   .then(() => console.log("✅ MongoDB connected"))
-  .catch((err) => console.error("❌ MongoDB connection error:", err));
+  .catch((err) => console.error("❌ MongoDB connection error:", err)); */
 
 //API Creation
 
