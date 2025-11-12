@@ -21,16 +21,24 @@ app.use(express.json())
 app.use(cors())
 
 //Database Connection with MongoDB
-const isDev = process.env.NODE_ENV !== 'production';
 
-mongoose.connect('mongodb://127.0.0.1:27017/Food-App-react')
+// mongoose.connect('mongodb://127.0.0.1:27017/Food-App-react')
 
-mongoose.connect(process.env.MONGO_URI);
 
-const mongoURI = isDev 
-  ? 'mongodb://127.0.0.1:27017/mydatabase' 
-  : process.env.MONGO_URI;
+const isDev = process.env.NODE_ENV !== "production";
 
+const mongoURI = isDev
+  ? "mongodb://127.0.0.1:27017/Food-App-react" // Local (MongoDB Compass)
+  : process.env.MONGO_URI; // Cloud / Production URI
+
+if (!mongoURI) {
+  throw new Error("MongoDB URI is missing! Check your environment variables.");
+}
+
+mongoose
+  .connect(mongoURI)
+  .then(() => console.log("✅ MongoDB connected"))
+  .catch((err) => console.error("❌ MongoDB connection error:", err));
 
 //API Creation
 
