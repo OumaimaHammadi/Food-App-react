@@ -24,6 +24,12 @@ app.use(cors())
 
 mongoose.connect('mongodb://127.0.0.1:27017/Food-App-react')
 
+mongoose.connect(process.env.MONGO_URI);
+
+const mongoURI = isDev 
+  ? 'mongodb://127.0.0.1:27017/mydatabase' 
+  : process.env.MONGO_URI;
+
 
 //API Creation
 
