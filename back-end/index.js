@@ -12,6 +12,8 @@ import newdishesRoute from './routes/newDishes.js'
 import populardishesRoute from './routes/popularDishes.js'
 import cartDataRoute from './routes/cartdata.js'
 import dishesRoute from './routes/dishes.js'
+import dotenv from "dotenv";
+dotenv.config();
 
 
 
