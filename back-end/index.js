@@ -43,10 +43,7 @@ const isDev = process.env.NODE_ENV !== "production";
 
 const mongoURI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/Food-App-react';
 
-mongoose.connect(mongoURI, { 
-  useNewUrlParser: true,
-  useUnifiedTopology: true 
-})
+mongoose.connect(mongoURI)
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.log('MongoDB connection error:', err));
 
