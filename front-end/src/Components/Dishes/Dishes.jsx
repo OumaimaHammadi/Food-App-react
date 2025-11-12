@@ -12,7 +12,7 @@ const Dishes = () => {
       useEffect(()=>{
                
               
-         fetch('https://food-app-react-eevn.vercel.app/api/v1/dishes')
+         fetch('https://localhost:9000/api/v1/dishes')
         .then((response)=> response.json())
         .then((data)=>setAll_dishe(data))
     
