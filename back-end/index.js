@@ -21,6 +21,7 @@ app.use(express.json())
 app.use(cors())
 
 //Database Connection with MongoDB
+const isDev = process.env.NODE_ENV !== 'production';
 
 mongoose.connect('mongodb://127.0.0.1:27017/Food-App-react')
 
@@ -37,7 +38,6 @@ app.get("/",(req,res)=>{
     res.send("Express App is Running")
 })
 
-const isDev = process.env.NODE_ENV !== 'production';
 //Image Storage Engine 
 const storage = multer.diskStorage({
     // destination: './upload/images',
