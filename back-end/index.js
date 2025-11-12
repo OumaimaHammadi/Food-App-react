@@ -18,23 +18,23 @@ import dishesRoute from './routes/dishes.js'
 ///////midleware
 const app = express()
 app.use(express.json())
-//app.use(cors())
+/*app.use(cors())*/
 
 
-app.use(
+ app.use(
   cors({
     origin: [
-      "https://food-app-react-front-end.vercel.app", // your React frontend
+      "https://food-app-react-front-end-pied.vercel.app", // your React frontend
       "http://localhost:3000" // for local dev
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
-);
+); 
 
 //Database Connection with MongoDB
 
-// mongoose.connect('mongodb://127.0.0.1:27017/Food-App-react')
+//mongoose.connect('mongodb://127.0.0.1:27017/Food-App-react')
 
 
 const isDev = process.env.NODE_ENV !== "production";
@@ -60,7 +60,7 @@ app.get("/",(req,res)=>{
 
 //Image Storage Engine 
 const storage = multer.diskStorage({
-    // destination: './upload/images',
+    //destination: './upload/images',
     destination: isDev ? './upload/images' : null,
     filename:(req,file,cb)=>{
         return cb(null,`${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)

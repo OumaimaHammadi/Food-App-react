@@ -8,10 +8,10 @@ const Popular = () => {
   const [popular_dishe,setPopular_dishe]= useState([])
 
   useEffect(()=>{
-   
-        fetch('https://food-app-react-eevn.vercel.app/api/v1/populardishes')
+        // fetch('http://localhost:9000/api/v1/populardishes')
 
-    // fetch('http://localhost:9000/api/v1/populardishes')
+   
+    fetch('https://localhost:9000/api/v1/populardishes')
     .then((response)=> response.json())
     .then((data)=>setPopular_dishe(data))
 
