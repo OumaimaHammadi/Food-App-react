@@ -19,12 +19,12 @@ const ShopContextProvider=(props) => {
   const [cartItems,setCartItems]=useState(getDefaultCart())
   
       useEffect(()=>{
-     fetch('https://food-app-react-lf5q.vercel.app/api/v1/dishe/alldishes')
+     fetch('https://food-app-react-eevn.vercel.app/api/v1/dishe/alldishes')
      .then((response)=> response.json())
      .then((data)=>setAll_Dishe(data))
      
      if(localStorage.getItem('auth-token')){
-        fetch('https://food-app-react-lf5q.vercel.app/cartData/getcart',{
+        fetch('https://food-app-react-eevn.vercel.app/cartData/getcart',{
           method:'POST',
           headers:{
             Accept:'application/form-data',
@@ -43,7 +43,7 @@ const ShopContextProvider=(props) => {
     setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
     // console.log(cartItems)
      if(localStorage.getItem('auth-token')){
-       fetch('https://food-app-react-lf5q.vercel.app/api/v1/cartData/addtocart',{
+       fetch('https://food-app-react-eevn.vercel.app/api/v1/cartData/addtocart',{
         method:'POST',
         headers:{
           Accept:'application/form-data',
