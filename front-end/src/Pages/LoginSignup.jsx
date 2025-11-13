@@ -1,6 +1,6 @@
 import React , { useState }from 'react'
 import './CSS/LoginSignup.css'
-import {BASE_URL} from '../utils/config.js'
+const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:9000/api/v1';
 
 const LoginSignup = () => {
 
