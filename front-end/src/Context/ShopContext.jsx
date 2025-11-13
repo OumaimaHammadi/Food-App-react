@@ -1,4 +1,5 @@
 import React, { createContext, useState ,useEffect} from 'react'
+import {BASE_URL} from '../utils/config.js'
 
 
 export const ShopContext = createContext(null)
@@ -19,12 +20,13 @@ const ShopContextProvider=(props) => {
   const [cartItems,setCartItems]=useState(getDefaultCart())
   
       useEffect(()=>{
-     fetch('http://localhost:9000/api/v1/dishe/alldishes')
+     fetch(`${BASE_URL}/alldishes`)
      .then((response)=> response.json())
      .then((data)=>setAll_Dishe(data))
      
      if(localStorage.getItem('auth-token')){
-        fetch('http://localhost:9000/cartData/getcart',{
+        fetch(`${BASE_URL}/cartData/getcart`
+          ,{
           method:'POST',
           headers:{
             Accept:'application/form-data',
@@ -43,7 +45,8 @@ const ShopContextProvider=(props) => {
     setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
     // console.log(cartItems)
      if(localStorage.getItem('auth-token')){
-       fetch('http://localhost:9000/api/v1/cartData/addtocart',{
+       fetch(`${BASE_URL}/cartData/addtocart`
+        ,{
         method:'POST',
         headers:{
           Accept:'application/form-data',

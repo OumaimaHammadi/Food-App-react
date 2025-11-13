@@ -1,8 +1,6 @@
-const port =9000
 import express from 'express'
-
+import dotenv from "dotenv";
 import mongoose  from 'mongoose'
-
 import multer from 'multer'
 import path from 'path'
 import cors from 'cors'
@@ -13,57 +11,20 @@ import populardishesRoute from './routes/popularDishes.js'
 import cartDataRoute from './routes/cartdata.js'
 import dishesRoute from './routes/dishes.js'
 
+import cookieParser from "cookie-parser";
 
 
 ///////midleware
-
-
-
-
-const app = express()
-app.use(express.json())
-/*app.use(cors())*/
-
-
- app.use(
-  cors({
-    origin: [
-      "https://food-app-react-front-end-pied.vercel.app",
-       "https://food-app-react-front-qxc9jbwnj-oumaimas-projects-b33d0af6.vercel.app", // your React frontend
-    //   "http://localhost:3000" // for local dev
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-); 
-
-//Database Connection with MongoDB
-
-//mongoose.connect('mongodb://127.0.0.1:27017/Food-App-react')
-
-
-const isDev = process.env.NODE_ENV !== "production";
-
-
-const mongoURI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/Food-App-react';
-
-mongoose.connect(mongoURI)
-.then(() => console.log('MongoDB connected'))
-.catch(err => console.log('MongoDB connection error:', err));
-
-
-/* const mongoURI = isDev
-  ? "mongodb://127.0.0.1:27017/Food-App-react" // Local (MongoDB Compass)
-  : process.env.MONGO_URI; // Cloud / Production URI
-
-if (!mongoURI) {
-  throw new Error("MongoDB URI is missing! Check your environment variables.");
+dotenv.config()
+const app =express()
+const port = process.env.PORT || 8000
+const corsOptions = {
+    origin:true,
+    credentials:true
 }
+///database connection
+mongoose.set("strictQuery",false)
 
-mongoose
-  .connect(mongoURI)
-  .then(() => console.log("✅ MongoDB connected"))
-  .catch((err) => console.error("❌ MongoDB connection error:", err)); */
 
 //API Creation
 
@@ -71,6 +32,32 @@ app.get("/",(req,res)=>{
     res.send("Express App is Running")
 })
 
+//Database Connection with MongoDB
+
+//mongoose.connect('mongodb://127.0.0.1:27017/Food-App-react')
+
+
+const connect = async()=>{
+    try{
+        await mongoose.connect(process.env.MONGO_URI,{
+            useNewUrlParser:true,
+            useUnifiedTopology:true
+        })
+        console.log('MongoDB database connected')
+    }
+    catch(err){
+        console.log('MongoDB database connection failed')
+
+
+    }
+}
+
+
+app.use(express.json())
+app.use(cors(corsOptions))
+app.use(cookieParser())
+
+const isDev = process.env.NODE_ENV !== "production";
 //Image Storage Engine 
 const storage = multer.diskStorage({
     //destination: './upload/images',

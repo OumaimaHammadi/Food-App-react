@@ -1,13 +1,14 @@
 import React , {useState,useEffect} from 'react'
 import './NewDishes.css'
 import Item from '../Item/item'
+import {BASE_URL} from '../../utils/config.js'
 
 
 const NewDishes = () => {
   const [new_dishes,setNew_dishes]= useState([])
 
   useEffect(()=>{
-    fetch('http://localhost:9000/api/v1/newdishes')
+    fetch(`${BASE_URL}/newdishes`)
     .then((response)=> response.json())
     .then((data)=>setNew_dishes(data))
 

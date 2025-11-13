@@ -1,7 +1,7 @@
 import React ,{useState,useEffect} from 'react'
 import './Dishes.css'
 import Item from '../Item/item'
-
+import {BASE_URL} from '../../utils/config.js'
 
 
 
@@ -12,7 +12,7 @@ const Dishes = () => {
       useEffect(()=>{
                
               
-         fetch('http://localhost:9000/api/v1/dishes')
+         fetch(`${BASE_URL}/dishes`)
         .then((response)=> response.json())
         .then((data)=>setAll_dishe(data))
     

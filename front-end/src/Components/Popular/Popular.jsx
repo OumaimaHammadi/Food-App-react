@@ -1,6 +1,8 @@
 import React , {useState,useEffect} from 'react'
 import './Popular.css'
 import Item from '../Item/item'
+import {BASE_URL} from '../../utils/config.js'
+
 
 
 const Popular = () => {
@@ -8,10 +10,9 @@ const Popular = () => {
   const [popular_dishe,setPopular_dishe]= useState([])
 
   useEffect(()=>{
-        // fetch('http://localhost:9000/api/v1/populardishes')
 
    
-    fetch('http://localhost:9000/api/v1/populardishes')
+    fetch(`${BASE_URL}/populardishes`)
     .then((response)=> response.json())
     .then((data)=>setPopular_dishe(data))
 
