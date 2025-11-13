@@ -106,16 +106,15 @@ app.use('/api/v1/cartData',cartDataRoute)
 
 
 
-app.listen(port,(error) => {
-    if(!error){
-        console.log("server listening on port",port)
+connect().then(() => {
+    app.listen(port, (error) => {
+        if (!error) {
+            console.log("server listening on port", port);
+        } else {
+            console.log("Error :", error);
+        }
+    });
+});
 
-
-    }
-
-    else{
-        console.log("Error :" ,error)
-    }
-})
 
 // export default app;
