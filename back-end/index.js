@@ -91,12 +91,12 @@ app.post('/api/v1/upload', upload.single('dishe'), (req, res) => {
 
 
 
-app.use('/api/v1/dishe',disheRoute)
-app.use('/api/v1/auth',authRoute)
-app.use('/api/v1/newdishes',newdishesRoute)
-app.use('/api/v1/populardishes',populardishesRoute)
-app.use('/api/v1/dishes',dishesRoute)
-app.use('/api/v1/cartData',cartDataRoute)
+app.use('/dishe',disheRoute)
+app.use('/auth',authRoute)
+app.use('/newdishes',newdishesRoute)
+app.use('/populardishes',populardishesRoute)
+app.use('/dishes',dishesRoute)
+app.use('/cartData',cartDataRoute)
 
 
 
