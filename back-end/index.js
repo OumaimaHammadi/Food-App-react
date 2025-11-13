@@ -1,5 +1,4 @@
 import express from 'express'
-import dotenv from "dotenv";
 import mongoose  from 'mongoose'
 import multer from 'multer'
 import path from 'path'
@@ -11,7 +10,10 @@ import populardishesRoute from './routes/popularDishes.js'
 import cartDataRoute from './routes/cartdata.js'
 import dishesRoute from './routes/dishes.js'
 
-import cookieParser from "cookie-parser";
+import cookieParser from "cookie-parser"
+import dotenv from 'dotenv';
+dotenv.config({ quiet: true });
+
 
 
 ///////midleware
@@ -45,10 +47,7 @@ app.get("/",(req,res)=>{
 
 const connect = async()=>{
     try{
-        await mongoose.connect(process.env.MONGO_URI,{
-            useNewUrlParser:true,
-            useUnifiedTopology:true
-        })
+        await mongoose.connect(process.env.MONGO_URI)
         console.log('MongoDB database connected')
     }
     catch(err){
@@ -105,16 +104,21 @@ app.use('/api/v1/cartData',cartDataRoute)
 
 
 
+app.listen(port,() => {
+    connect()
+    console.log("server listening on port",port)
+})
 
-connect().then(() => {
-    app.listen(port, (error) => {
-        if (!error) {
-            console.log("server listening on port", port);
-        } else {
-            console.log("Error :", error);
-        }
-    });
-});
+// connect().then(() => {
+//     app.listen(port, (error) => {
+//         if (!error) {
+//             console.log("server listening on port", port);
+//         } else {
+//             console.log("Error :", error);
+//         }
+//     });
+// });
+
 
 
 // export default app;
