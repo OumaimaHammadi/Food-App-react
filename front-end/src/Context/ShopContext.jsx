@@ -1,6 +1,5 @@
 import React, { createContext, useState ,useEffect} from 'react'
-import {BASE_URL} from '../utils/config.js'
-
+const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:9000/api/v1';
 
 export const ShopContext = createContext(null)
 
