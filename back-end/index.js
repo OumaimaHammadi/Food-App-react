@@ -24,6 +24,11 @@ const corsOptions = {
     credentials:true
 }
 ///database connection
+
+app.use(express.json())
+app.use(cors(corsOptions))
+app.use(cookieParser())
+
 mongoose.set("strictQuery",false)
 
 
@@ -54,9 +59,7 @@ const connect = async()=>{
 }
 
 
-app.use(express.json())
-app.use(cors(corsOptions))
-app.use(cookieParser())
+
 
 const isDev = process.env.NODE_ENV !== "production";
 //Image Storage Engine 
