@@ -44,6 +44,8 @@ app.get("/",(req,res)=>{
 
 //mongoose.connect('mongodb://127.0.0.1:27017/Food-App-react')
 
+//mongoose.connect(process.env.MONGO_URI)
+
 
 const connect = async()=>{
     try{
