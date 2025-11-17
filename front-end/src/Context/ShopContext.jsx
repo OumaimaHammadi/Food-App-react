@@ -19,7 +19,7 @@ const ShopContextProvider=(props) => {
   const [cartItems,setCartItems]=useState(getDefaultCart())
   
   useEffect(()=>{
-     fetch(`${BASE_URL}/alldishes`)
+     fetch(`${BASE_URL}/dishe/alldishes`)
      .then((response)=> response.json())
      .then((data)=>setAll_Dishe(data))
      
