@@ -32,7 +32,8 @@ app.use(express.json())
 app.use(cors(corsOptions))
 app.use(cookieParser())
 
-mongoose.set("strictQuery",false)
+//mongoose.set("strictQuery",false)
+mongoose.set('bufferCommands', false);
 
 
 //API Creation
