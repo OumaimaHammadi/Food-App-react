@@ -6,12 +6,23 @@ const BASE_URL = process.env.REACT_APP_BASE_URL;
 const NewDishes = () => {
   const [new_dishes,setNew_dishes]= useState([])
 
-  useEffect(()=>{
-    fetch(`${BASE_URL}/newdishes`)
-    .then((response)=> response.json())
-    .then((data)=>setNew_dishes(data))
+  // useEffect(()=>{
+  //   fetch(`${BASE_URL}/newdishes`)
+  //   .then((response)=> response.json())
+  //   .then((data)=>setNew_dishes(data))
 
-  },[])
+  // },[])
+
+  useEffect(() => {
+  fetch(`${BASE_URL}/newdishes`)
+    .then(response => {
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      return response.json();
+    })
+    .then(data => setNew_dishes(data))
+    .catch(error => console.error('Fetch error:', error));
+}, []);
+
 
   return (
     <div className='new-collections'>

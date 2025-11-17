@@ -8,14 +8,28 @@ const Popular = () => {
 
   const [popular_dishe,setPopular_dishe]= useState([])
 
-  useEffect(()=>{
+  // useEffect(()=>{
 
    
-    fetch(`${BASE_URL}/populardishes`)
-    .then((response)=> response.json())
-    .then((data)=>setPopular_dishe(data))
+  //   fetch(`${BASE_URL}/populardishes`)
+  //   .then((response)=> response.json())
+  //   .then((data)=>setPopular_dishe(data))
 
-  },[])
+  // },[])
+  useEffect(() => {
+  fetch(`${BASE_URL}/populardishes`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => setPopular_dishe(data))
+    .catch((error) => {
+      console.error("Fetch error:", error);
+    });
+}, []);
+
 
   return (
     <div className='popular'>
