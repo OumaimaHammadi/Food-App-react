@@ -13,7 +13,7 @@ import dishesRoute from '../routes/dishes.js'
 
 import cookieParser from "cookie-parser"
 import dotenv from 'dotenv';
-dotenv.config({ quiet: true });
+dotenv.config();
 
 
 
@@ -49,17 +49,25 @@ app.get("/",(req,res)=>{
 //mongoose.connect(process.env.MONGO_URI)
 
 
-const connect = async()=>{
-    try{
-        await mongoose.connect(process.env.MONGO_URI)
-        console.log('MongoDB database connected')
-    }
-    catch(err){
-        console.log('MongoDB database connection failed')
+// const connect = async()=>{
+//     try{
+//         await mongoose.connect(process.env.MONGO_URI)
+//         console.log('MongoDB database connected')
+//     }
+//     catch(err){
+//         console.log('MongoDB database connection failed')
 
 
-    }
-}
+//     }
+// }
+
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log("MongoDB connected"))
+.catch(err => console.log("MongoDB connection error:", err));
+
 
 
 
@@ -109,7 +117,7 @@ app.use('/api/v1/cartData',cartDataRoute)
 
 
 app.listen(port,() => {
-    connect()
+    // connect()
     console.log("server listening on port",port)
 })
 

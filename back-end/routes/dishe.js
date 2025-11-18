@@ -9,7 +9,7 @@ const router =express.Router()
 
 // add new dishe
 router.post('/adddishe',adddishe)
-router.get('/dishes/alldishes',alldishes)
+router.get('/alldishes',alldishes)
 router.get('/getSingleDishe/:id',getSingleDishe)
 router.delete('/removedishe/:id',removedishe)
 router.put('/updateDishe/:id',updateDishe)
