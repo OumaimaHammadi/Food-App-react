@@ -22,9 +22,9 @@ dotenv.config()
 const app =express()
 const port = process.env.PORT || 8000
 const corsOptions = {
-    origin: ['http://localhost:3000', 'https://food-app-react-client.vercel.app'],
+    //origin: ['http://localhost:3000', 'https://food-app-react-client.vercel.app'],
     // origin:true,
-    credentials:true
+    //credentials:true
 }
 ///database connection
 
@@ -33,7 +33,7 @@ app.use(cors(corsOptions))
 app.use(cookieParser())
 
 //mongoose.set("strictQuery",false)
-mongoose.set('bufferCommands', false);
+ //mongoose.set('bufferCommands', false);
 
 
 //API Creation
