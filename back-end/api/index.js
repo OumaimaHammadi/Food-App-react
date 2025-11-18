@@ -42,24 +42,7 @@ app.get("/",(req,res)=>{
     res.send("Express App is Running")
 })
 
-//Database Connection with MongoDB
 
-//mongoose.connect('mongodb://127.0.0.1:27017/Food-App-react')
-
-//mongoose.connect(process.env.MONGO_URI)
-
-
-// const connect = async()=>{
-//     try{
-//         await mongoose.connect(process.env.MONGO_URI)
-//         console.log('MongoDB database connected')
-//     }
-//     catch(err){
-//         console.log('MongoDB database connection failed')
-
-
-//     }
-// }
 
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
@@ -100,7 +83,8 @@ app.post('/api/v1/upload', upload.single('dishe'), (req, res) => {
 
     res.json({
         success:1,
-        image_url:`http://localhost:${port}/api/v1/images/${req.file.filename}`
+        // image_url:`http://localhost:${port}/api/v1/images/${req.file.filename}`
+       image_url: `${process.env.SERVER_URL}/api/v1/images/${req.file.filename}`
     })
 })
 
