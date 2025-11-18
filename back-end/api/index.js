@@ -84,7 +84,9 @@ app.post('/api/v1/upload', upload.single('dishe'), (req, res) => {
     res.json({
         success:1,
         // image_url:`http://localhost:${port}/api/v1/images/${req.file.filename}`
-       image_url: `${process.env.SERVER_URL}/api/v1/images/${req.file.filename}`
+      // image_url:`${process.env.MONGO_URI}/api/v1/images/${req.file.filename}`
+      image_url:`https://food-app-react-server.vercel.app/api/v1/images/${req.file.filename}`
+
     })
 })
 
