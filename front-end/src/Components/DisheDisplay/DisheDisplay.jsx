@@ -52,12 +52,13 @@ const DisheDisplay  = (props) => {
       
 
           <div className="dishedisplay-right-description">
-              This dish appears to be a fresh Mediterranean salad, typically made with: Crisp romaine and mixed lettuce ,
+{dishe.description}
+              {/* This dish appears to be a fresh Mediterranean salad, typically made with: Crisp romaine and mixed lettuce ,
 
               Sliced cherry tomatoes ,Black olives,Onion rings,Cubes of feta cheese, A light olive oil or vinaigrette dressing. <br />
 
               It’s a healthy, colorful, and flavorful salad, perfect as a starter or a light main dish. Packed with nutrients and Mediterranean flair, 
-              it's ideal for those seeking a refreshing, wholesome meal
+              it's ideal for those seeking a refreshing, wholesome meal */}
            </div>
 
 

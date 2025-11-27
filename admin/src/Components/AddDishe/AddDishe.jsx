@@ -2,6 +2,10 @@ import React, { useState } from 'react'
 import './AddDishe.css'
 import upload_area from '../../assets/upload_area.svg'
 
+
+
+
+
 const AddDishe = () => {
 
 const [image,setImage]=useState(false)
@@ -9,12 +13,12 @@ const [image,setImage]=useState(false)
 const imageHandler=(e)=>{
   setImage(e.target.files[0])
 
-
 }
 
 const [disheDetails,setDisheDetails]= useState({
         name:"",
         image:"",
+        description:"",
         category:"Tunisian/Oriental Cuisine",
         new_price:"",
         old_price:""
@@ -32,7 +36,7 @@ const Add_Dishe =async()=>{
   let formData = new FormData()
   formData.append('dishe',image)
 
-   await fetch('http://localhost:9000/api/v1/upload',{
+   await fetch('http://localhost:9000/api/v1/images/upload',{
     method:'POST',
     headers:{
       Accept:'application/json',
@@ -45,13 +49,15 @@ const Add_Dishe =async()=>{
     responseData = data
   })
 
-  if(responseData.success){
-        dishe.image= responseData.image_url
+  // if(responseData.success){
+  //       dishe.image= responseData.image_url
+  if (responseData.success && responseData.data?.url) {
+    dishe.image = responseData.data.url;
+    console.log("dishe.image", dishe.image);
+    console.log(dishe);
 
 
-        console.log("dishe.image",dishe.image)
-        console.log(dishe)
-
+      
         await fetch('http://localhost:9000/api/v1/dishe/adddishe',{
         method:'POST',
         headers:{
@@ -66,6 +72,13 @@ const Add_Dishe =async()=>{
       })
   }
 }
+
+
+
+
+
+
+
 
   return (
     <div className='add-dishe'>
@@ -87,6 +100,11 @@ const Add_Dishe =async()=>{
 
           </div>
 
+         
+          <div className="adddishe-itemfield">
+            <p>Description </p>
+            <input value={disheDetails.description} onChange={changeHandler} type="text" name='description' placeholder='type here'/>
+          </div>
         
         <div className="adddishe-itemfield">
           <p>Dishe Category </p>
@@ -155,4 +173,7 @@ const Add_Dishe =async()=>{
   )
 }
 
-export default AddDishe
+
+
+
+export default AddDishe 
