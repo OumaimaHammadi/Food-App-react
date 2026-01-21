@@ -103,7 +103,11 @@ const Add_Dishe =async()=>{
          
           <div className="adddishe-itemfield">
             <p>Description </p>
-            <input value={disheDetails.description} onChange={changeHandler} type="text" name='description' placeholder='type here'/>
+            {/* <input value={disheDetails.description} onChange={changeHandler} type="text" name='description' placeholder='type here'/> */}
+                     <textarea value={disheDetails.description} onChange={changeHandler} type="text" name='description' placeholder='type here'>
+
+                     </textarea>
+
           </div>
         
         <div className="adddishe-itemfield">
