@@ -1,4 +1,4 @@
-import React, { useContext ,useState} from 'react'
+import React, { useContext } from 'react'
 import './DisheDisplay.css'
 import { ShopContext } from '../../Context/ShopContext'
 import { useNavigate } from 'react-router-dom';
@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const DisheDisplay  = (props) => {
   const {dishe}=props
-  const {addToCart,setMenu}=useContext(ShopContext)
+  const {addToCart}=useContext(ShopContext)
 
    const navigate = useNavigate();
    

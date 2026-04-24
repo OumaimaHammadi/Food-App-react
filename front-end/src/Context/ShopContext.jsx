@@ -17,7 +17,6 @@ const ShopContextProvider=(props) => {
   const [all_dishe,setAll_Dishe]= useState([])
 
   const [cartItems,setCartItems]=useState(getDefaultCart())
-  const [menu, setMenu] = useState("home");
 
   
   useEffect(()=>{
