@@ -40,7 +40,7 @@ const remove_dishe = async (id)=>{
 
   return (
           <div className='list-dishe'>
-              <h1> All Dishe List</h1>
+              <h1>List of dishes</h1>
 
               <div className="listdishe-format-main">
                 

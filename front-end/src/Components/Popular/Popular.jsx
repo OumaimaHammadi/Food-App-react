@@ -8,7 +8,7 @@ const Popular = () => {
 
   const [popular_dishe,setPopular_dishe]= useState([])
 
-  // useEffect(()=>{
+ //useEffect(()=>{
 
    
   //   fetch(`${BASE_URL}/populardishes`)
@@ -16,6 +16,9 @@ const Popular = () => {
   //   .then((data)=>setPopular_dishe(data))
 
   // },[])
+
+
+
   useEffect(() => {
   fetch(`${BASE_URL}/populardishes`)
     .then((response) => {

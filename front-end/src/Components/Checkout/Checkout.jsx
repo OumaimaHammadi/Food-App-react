@@ -15,7 +15,7 @@ const { totalAmount = 0, cartDetails = [] } = location.state || {};
 
   const handleAddToCart = () => {
     
-    navigate('/thankyou');
+    navigate('/thankyou',{state: { menu: "thankyou" }});
   }
 
 

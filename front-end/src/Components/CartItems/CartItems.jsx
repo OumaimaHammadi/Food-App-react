@@ -22,7 +22,7 @@ const CartItems = () => {
 
       }));
 
-    navigate('/checkout', { state: { totalAmount , cartDetails} });
+    navigate('/checkout', { state: { totalAmount , cartDetails ,menu: "checkout" }});
   }
   
   

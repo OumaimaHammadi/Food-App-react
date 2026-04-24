@@ -22,9 +22,8 @@ function App() {
 
 
       
-          <Route path='/dishe' element={<DisplayDishes/>} >
-              <Route path=':disheId' element={<DisplayDishes/>} />
-          </Route>
+          <Route path='/dishes/:disheId' element={<DisplayDishes/>} />
+              {/* <Route path=':disheId' element={<DisplayDishes/>} /> */}
 
 
           <Route path='/dishes' element={<Dishes/>} />  

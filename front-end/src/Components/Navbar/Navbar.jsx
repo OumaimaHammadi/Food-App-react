@@ -1,15 +1,22 @@
-import React, {useState , useContext} from 'react'
+import React, {useState ,useContext,useEffect} from 'react'
 import './Navbar.css'
 import logo from '../Assets/images/logo_3.jpg'
 
 import cart_icon from '../Assets/images/cart_icon.png'
-import { Link } from 'react-router-dom'
+import { Link ,useLocation} from 'react-router-dom'
 import {ShopContext} from '../../Context/ShopContext'
 
 const Navbar = () => {
     const [menu,setMenu]= useState("home")
     const {getTotalCartItems}=useContext(ShopContext)
 
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.menu) {
+      setMenu(location.state.menu);
+    }
+  }, [location]);
     
   return (
     <div className='navbar'>
@@ -36,11 +43,11 @@ const Navbar = () => {
       <div className="nav-login-cart">
           {localStorage.getItem('auth-token')?<button onClick={()=>{localStorage.removeItem('auth-token')
                     window.location.replace('/') }}>Logout</button>
-        :<Link   to='/login'> <button>Login</button></Link>
+        :<Link   to='/login'  onClick={() => setMenu("login")}> <button>Login</button></Link>
 
         }  
 
-        <Link to='/cart'>
+        <Link to='/cart' onClick={() => setMenu("cart")}>
         <img src={cart_icon} alt="" /></Link>
         <div className="nav-cart-count">{getTotalCartItems()}</div>
 

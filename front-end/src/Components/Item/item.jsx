@@ -1,13 +1,26 @@
 import React from 'react'
 import './item.css'
-import {Link} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
-const item = (props) => {
+
+const Item = (props) => {
+const navigate = useNavigate();
+
+  const handleClick = () => {
+    window.scrollTo(0, 0);
+    navigate(`/dishes/${props.id}`, {
+    state: { menu: "dishes" }
+  });
+  };
+
   return (
     <div className='item'>
-      <Link to={`/dishe/${props.id}`}>
+      {/* <Link to={`/dishes/${props.id}`}>
       <img onClick={window.scrollTo(0,0)}  src={props.image} alt="" />
-      </Link>
+      </Link> */}
+
+      <img onClick={handleClick} src={props.image} alt="" />
+
 
         <p>{props.name}</p>
         <div className="item-prices">
@@ -26,4 +39,4 @@ const item = (props) => {
   )
 }
 
-export default item
+export default Item

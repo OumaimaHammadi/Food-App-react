@@ -10,8 +10,19 @@
 }
 
 .nav-logo{
-    width: 200px;
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   
 }
+.navbar-icon {
+    width: 120px;
+    height: 70px;
+    margin-right: 100px; 
+
+}
+
+
 
 .nav-profile{
     width: 75px;

@@ -1,4 +1,4 @@
-import React, { useContext  } from 'react'
+import React, { useContext ,useState} from 'react'
 import './DisheDisplay.css'
 import { ShopContext } from '../../Context/ShopContext'
 import { useNavigate } from 'react-router-dom';
@@ -6,13 +6,16 @@ import { useNavigate } from 'react-router-dom';
 
 const DisheDisplay  = (props) => {
   const {dishe}=props
-  const {addToCart}=useContext(ShopContext)
+  const {addToCart,setMenu}=useContext(ShopContext)
 
    const navigate = useNavigate();
+   
 
   const handleAddToCart = () => {
     addToCart(dishe.id);
-    navigate('/cart');
+
+
+    navigate('/cart',{state: { menu: "cart" }})
   }
 
 
@@ -72,10 +75,12 @@ const DisheDisplay  = (props) => {
            <div className="btn-add-toCart">
           
 
-            {/* <button onClick={(()=>{addToCart(dishe.id)})}>ADD TO CART</button> */}
 
 
-           <button onClick={handleAddToCart}>ADD TO CART</button>
+           <button 
+           onClick={handleAddToCart} 
+           >
+           ADD TO CART</button>
 
 </div>
 </div>
