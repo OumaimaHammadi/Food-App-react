@@ -19,11 +19,11 @@ const Dishes = () => {
 
     return (
 
-        <div className='new-collections'>
+        <div className='store-dishes'>
         <h1>Our Dishes</h1>
         <hr />
     
-        <div className='collections'>
+        <div className='dishes'>
             {all_dishe.map((item,i)=>{
                 return <Item key={i} id={item.id}
                 name={item.name}

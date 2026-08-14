@@ -189,3 +189,49 @@
     margin: 0 10px;
     border: 1px solid #ccc;
   }
+
+
+
+
+
+  /**/
+  /* ===================================================== TABLET : 1024px ===================================================== */ 
+  @media (max-width: 1024px) 
+  { .dishedisplay 
+    { margin: 0 50px; 
+        gap: 30px; } 
+  .dishedisplay-left { 
+    padding: 1rem; } 
+  .dishedisplay-main-img { 
+    width: 400px; 
+    height: 600px; } 
+  .dishedisplay-right {
+     margin: 0 20px; } 
+  .dishedisplay-right h1 { 
+    font-size: 32px; 
+} 
+  .dishedisplay-right-prices {
+     margin: 25px 0; 
+     font-size: 21px;
+      gap: 20px; } 
+  .dishedisplay-right-description { 
+    font-size: 19px; 
+    line-height: 1.5;
+     margin-bottom: 30px; } 
+} 
+/* ===================================================== TABLET : 768px ===================================================== */
+ @media (max-width: 768px) {
+   .dishedisplay { flex-direction: column; margin: 30px 40px; gap: 30px; } 
+   .dishedisplay-left { width: 100%; padding: 20px; box-sizing: border-box; } .dishedisplay-main-img { width: 100%; max-width: 450px; height: 500px; } .dishedisplay-right { margin: 0; width: 100%; }
+    .dishedisplay-right h1 { font-size: 30px; margin-top: 0; }
+     .dishedisplay-right-prices { margin: 20px 0; font-size: 22px; } 
+     .dishedisplay-right-description { font-size: 18px; line-height: 1.6; } 
+     .dishedisplay-right .btn-add-toCart button { width: 100%; padding: 18px; } .btn-information { flex-direction: column; } .dishedisplay-right .Ordering-Information button, .dishedisplay-right 
+     .Specification button { width: 100%; } .ordering-table { font-size: 14px; } } 
+     /* ===================================================== MOBILE : 480px ===================================================== */ @media (max-width: 480px)
+      { .dishedisplay { margin: 20px 15px; gap: 20px; } 
+      .dishedisplay-left { padding: 10px; } 
+      .dishedisplay-main-img { width: 100%; height: 350px; } 
+      .dishedisplay-right { margin: 0; } 
+      .dishedisplay-right h1 { font-size: 25px; line-height: 1.3; } .dishedisplay-right-prices { margin: 15px 0 25px; gap: 15px; font-size: 19px; } .dishedisplay-right-description { font-size: 16px; line-height: 1.6; margin-bottom: 25px; } .dishedisplay-right .btn-add-toCart button { width: 100%; padding: 16px; font-size: 15px; } .btn-information { margin: 20px 0; gap: 8px; } .dishedisplay-right .Ordering-Information button, .dishedisplay-right .Specification button { padding: 15px; font-size: 14px; } .tabs { flex-wrap: wrap; gap: 5px; } .tab { padding: 8px 12px; margin-right: 0; font-size: 14px; } .ordering-table { font-size: 12px; } .ordering-table th, .ordering-table td { padding: 8px 5px; } 
+     .quantity-selector input { width: 100px; }}

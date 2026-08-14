@@ -31,3 +31,101 @@
     padding: 48px;
     padding-bottom: 70px;
 }
+
+
+/**/
+
+
+
+
+
+
+
+/* =========================
+   TABLETTE
+========================= */
+
+@media (max-width: 1024px) {
+
+    .descriptionbox {
+        margin: 80px 60px;
+    }
+
+    .descriptionbox-nav-box {
+        width: 160px;
+        height: 60px;
+        font-size: 15px;
+    }
+
+    .descriptionbox-description {
+        padding: 35px;
+        padding-bottom: 50px;
+        gap: 20px;
+    }
+
+    .descriptionbox-description p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .descriptionbox {
+        margin: 50px 20px;
+    }
+
+    .descriptionbox-navigator {
+        width: 100%;
+    }
+
+    .descriptionbox-nav-box {
+        width: 50%;
+        height: 55px;
+        font-size: 14px;
+    }
+
+    .descriptionbox-description {
+        padding: 25px 20px;
+        padding-bottom: 35px;
+        gap: 15px;
+    }
+
+    .descriptionbox-description p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 0;
+    }
+}
+
+
+/* =========================
+   PETIT MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .descriptionbox {
+        margin: 35px 12px;
+    }
+
+    .descriptionbox-nav-box {
+        height: 50px;
+        font-size: 13px;
+    }
+
+    .descriptionbox-description {
+        padding: 20px 15px;
+        padding-bottom: 25px;
+    }
+
+    .descriptionbox-description p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+}

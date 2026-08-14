@@ -34,3 +34,70 @@
     font-weight: bold;
   }
   
+
+
+  
+
+
+
+
+/* =========================
+   TABLETTE
+========================= */
+@media (max-width: 1024px) {
+
+    .breadcrumb {
+        margin: 40px 60px;
+        font-size: 18px;
+        gap: 7px;
+    }
+
+    .breadcrumb img {
+        width: 2px;
+        height: 2px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+    .breadcrumb {
+        margin: 30px 25px;
+        font-size: 16px;
+        gap: 6px;
+    }
+
+    .breadcrumb img {
+        width: 7px;
+        height: 13px;
+    }
+}
+
+
+/* =========================
+   PETIT MOBILE
+========================= */
+@media (max-width: 480px) {
+
+    .breadcrumb {
+        margin: 20px 15px;
+        font-size: 14px;
+        gap: 5px;
+        line-height: 1.5;
+    }
+
+    .breadcrumb img {
+        width: 6px;
+        height: 12px;
+    }
+
+    .breadcrumb .current {
+        max-width: 180px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}

@@ -15,9 +15,7 @@ const navigate = useNavigate();
 
   return (
     <div className='item'>
-      {/* <Link to={`/dishes/${props.id}`}>
-      <img onClick={window.scrollTo(0,0)}  src={props.image} alt="" />
-      </Link> */}
+    
 
       <img onClick={handleClick} src={props.image} alt="" />
 

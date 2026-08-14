@@ -6,7 +6,6 @@ import path from 'path'
 
 import cors from 'cors'
 import disheRoute from './routes/dishe.js'
-// './routes/dishe.js'
 import uploadImage from './routes/upload.js'
 import authRoute from './routes/auth.js'
 import newdishesRoute from './routes/newDishes.js'
