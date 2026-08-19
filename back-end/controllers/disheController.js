@@ -31,7 +31,7 @@ if (!imageUrl) {
 
 
     const dishe = new Dishe({
-      // id,
+       id,
       name: req.body.name,
       image: imageUrl, 
       description:req.body.description,
