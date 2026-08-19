@@ -17,8 +17,11 @@ const DisplayDishes = () => {
 
 </div>
   }
-  const dishe = all_dishe.find((e)=>e.id === Number(disheId)
-)
+  // const dishe = all_dishe
+  // .find((e)=>e.id === Number(disheId)
+//)
+
+const dishe = all_dishe.find((e) => e._id === disheId);
 
 
   

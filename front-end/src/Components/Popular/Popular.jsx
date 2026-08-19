@@ -43,7 +43,7 @@ const Popular = () => {
 
         <div className="popular-item">
             {popular_dishe.map((item,i)=>{
-                return <Item key={i} id={item.id}
+                return <Item key={i} id={item._id}
                 
                 name={item.name}
                 image={item.image}

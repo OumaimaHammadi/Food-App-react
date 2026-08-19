@@ -26,7 +26,7 @@ const NewDishes = () => {
 
     <div className='collections'>
         {new_dishes.map((item,i)=>{
-            return <Item key={i} id={item.id}
+            return <Item key={i} id={item._id}
             name={item.name}
             image={item.image}
             new_price={item.new_price}

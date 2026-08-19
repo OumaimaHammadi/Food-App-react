@@ -8,19 +8,7 @@ export const adddishe = async (req, res) => {
     let dishes = await Dishe.find({});
     let id = dishes.length > 0 ? dishes[dishes.length - 1].id + 1 : 1;
 
-    // let imageUrl = "";
-
-    // // Upload Cloudinary si fichier envoyé
-    // if (req.file) {
-    //   imageUrl = await uploadImageClodinary(req.file);
-    // }
-
-    // if (!imageUrl) {
-    //   return res.status(400).json({
-    //     message: "Image is required",
-    //     success: false
-    //   });
-    // }
+   
 
     let imageUrl = "";
 
@@ -43,7 +31,7 @@ if (!imageUrl) {
 
 
     const dishe = new Dishe({
-      id,
+      // id,
       name: req.body.name,
       image: imageUrl, 
       description:req.body.description,
@@ -71,98 +59,6 @@ if (!imageUrl) {
 };
 
 
-// export const adddishe = async (req, res) => {
-//   try {
-//     // Récupération des plats existants
-//     const dishes = await Dishe.find({});
-//     let id = 1;
-
-//     if (dishes.length > 0) {
-//       const lastDishe = dishes[dishes.length - 1];
-//       id = lastDishe.id + 1;
-//     }
-
-//     // Upload image Cloudinary
-//     let imageUrl = "";
-
-//     if (req.file) {
-//       const uploaded = await uploadImageClodinary(req.file);
-//       imageUrl = uploaded.secure_url; // URL Cloudinary
-//     }
-
-//     // Création du plat
-//     const dishe = new Dishe({
-//       id: id,
-//       name: req.body.name,
-//       category: req.body.category,
-//       new_price: req.body.new_price,
-//       old_price: req.body.old_price,
-//       image: imageUrl
-//     });
-
-//     console.log(dishe);
-
-//     await dishe.save();
-//     console.log("Saved");
-
-//     return res.json({
-//       success: true,
-//       name: req.body.name
-//     });
-
-//   } catch (error) {
-//     console.log("Error in adddishe:", error);
-//     return res.status(500).json({
-//       success: false,
-//       message: error.message
-//     });
-//   }
-// };
-
-
-// export const adddishe = async(req,res)=>{
-    
-
-//  let dishes = await Dishe.find({})
-//     let id;
-//     if(dishes.length > 0)
-//     {
-//         let last_dishe_array = dishes.slice(-1)
-//         let last_dishe = last_dishe_array[0]
-//         id = last_dishe.id+1
-
-
-   
-//     }
-
-//     else{
-//         id=1
-//     }
-
-      
-
-// const dishe =new Dishe(
-//     {
-//         id:id,
-//         name:req.body.name,
-//         image:req.body.image,
-//         category:req.body.category,
-//         new_price:req.body.new_price,
-//         old_price:req.body.old_price,
-     
-
-
-//     })
-//         console.log(dishe)
-//     await dishe.save()
-//     console.log("Saved")
-//     res.json({
-//         success:true,
-//         name:req.body.name
-//     })
-
-
-// }
 
 
 
